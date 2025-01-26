@@ -28,8 +28,8 @@ df -h --total | awk '/total/ {total = $2; used = $3; avail = $4; percent = $5; p
 
 # Top 5 processes by CPU usage
 echo -e "\nTop 5 Processes by CPU Usage:\n"
-ps aux --sort=-%cpu | head -n 6 | awk 'NR==1 {print $0} NR>1 {printf "\n%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-20s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11}' | column -t
+ps aux --sort=-%cpu | head -n 6 | awk 'NR==1 {print $0} NR>1 {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11}' | column -t
 
 # Top 5 processes by Memory usage
 echo -e "\nTop 5 Processes by Memory Usage:\n"
-ps aux --sort=-%mem | head -n 6 | awk 'NR==1 {print $0} NR>1 {printf "\n%-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-10s %-20s\n", $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11}' | column -t
+ps aux --sort=-%mem | head -n 6 | awk 'NR==1 {print $0} NR>1 {print $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11}' | column -t
